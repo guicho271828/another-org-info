@@ -434,8 +434,10 @@ function rejectHandler(next){
 
 
 function keyboardHandler(e){
-    console.log("charCode:"+e.charCode
-                +" keyCode:"+e.keyCode
+    console.log("code:"+e.code
+                +" key:"+e.key
+                +" charCode (obsolete):"+e.charCode
+                +" keyCode (obsolete):"+e.keyCode
                 +" which:"+e.which
                 +" Modifier:"
                 +(e.ctrlKey?"Ctrl":"")
