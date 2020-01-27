@@ -330,16 +330,9 @@ keystrokeManager.__defineGetter__(
         return this._stroke;
     });
 
-
-function available_p(e){
-    return (32 <= e.charCode && e.charCode <= 126)}
-function backspace_p(e){ return (e.keyCode == 8)}
-function enter_p(e){ return (e.keyCode == 13)}
-function cancel_p(e){
-    return (e.charCode == 103 && e.ctrlKey) // Ctrl-g
-        || (e.keyCode == 27);  // Esc
-}
-
+function backspace_p(e){ return (e.key == "Backspace")}
+function enter_p(e){     return (e.key == "Enter")}
+function cancel_p(e){    return (e.key == "g" && e.ctrlKey) || (e.key == "Escape")} // Ctrl-g and Esc
 
 function enterHandler(next){
     return function(e){
@@ -382,15 +375,8 @@ function printHandler(next){
 
 function dispatchHandler(next){
     return function(e){
-        var handler;
-        if (available_p(e)){
-            keystrokeManager.push(String.fromCharCode(e.charCode));
-            handler = keyManager[keystrokeManager.stroke];
-        }else{
-            if (keystrokeManager.stroke == ""){
-                handler = keyManager[e.keyCode];
-            }
-        }
+        keystrokeManager.push(e.key);
+        var handler = keyManager[keystrokeManager.stroke];
         if (typeof handler == "function"){
             e.preventDefault();
             console.log("Handler function "
@@ -540,10 +526,14 @@ window.onload = function(){
 ////////////////////////////////////////////////////////////////
 //// keymanager functions
 
+// printable keys are accumulated into a string in keystrokeManager until matched.
+// When the new key results in a string which does not match any commands, the new key is removed.
+// non-printable keys are queried by the event.key string.
+
 // expand one element in the list in the current slide, or go to the next slide
 keyManager.n
     = keyManager[" "]
-    = keyManager[40]
+    = keyManager["ArrowRight"]
     = function(){
     $(".title").hide();
     console.log(slide.level);
@@ -559,7 +549,7 @@ keyManager.n
 
 // expand all elements in the current slide
 keyManager.N
-    = keyManager[39]
+    = keyManager["ArrowDown"]
     = function(){
     $(".title").hide();
     console.log(slide.level);
@@ -568,7 +558,7 @@ keyManager.N
 };
 
 keyManager.p
-    = keyManager[37]
+    = keyManager["ArrowLeft"]
     = function(){
     console.log(slide.level);
     try{
@@ -581,7 +571,7 @@ keyManager.p
 
 keyManager.u
     = keyManager["^"]
-    = keyManager[38]
+    = keyManager["ArrowUp"]
     = function(){
     console.log(slide.level);
     try{
