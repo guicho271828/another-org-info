@@ -521,6 +521,7 @@ window.onload = function(){
     keystrokeManager.setup();
 
     $('#fullscreen').on("click",toggleFullScreen);
+    $(window).on('keydown',keyboardHandler);
     $(window).on('keypress',keyboardHandler);
     $(window).on("click",keyManager.n);
     $(window).on('touchstart', onTouchStart);
