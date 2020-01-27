@@ -1,6 +1,7 @@
 
 latexmk    = latexmk/latexmk.pl
 
+GH_DOMAIN  = git@github.com
 GH_USER    = asai-research-presentation
 EMACS      = emacs
 EMACSFLAGS =
@@ -30,7 +31,7 @@ pdf:    key.pdf
 nokey:  nokey.pdf
 
 deploy: index
-	+scripts/deploy.sh git@github.com:$(GH_USER)/$$(basename $$(readlink -ef .)).git
+	+scripts/deploy.sh $(GH_DOMAIN):$(GH_USER)/$$(basename $$(readlink -ef .)).git
 
 index: html
 	cp -f presen.org.html index.html
