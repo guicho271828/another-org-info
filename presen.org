@@ -51,10 +51,10 @@ Proceed with "n"
 #+begin_container-fluid
 #+begin_row-fluid
 #+begin_span6
-+ n,<Space> :: go to the next slide/expand a list
-+ p :: back to the previous slide
-+ u, ^ :: go to the parent section
-+ N :: expand all list in the current slide
++ n, <Space>, <Right arrow key>, mouse click, mouse wheel down, touch :: go to the next slide/expand a list
++ p, <Left arrow key>, mouse wheel up :: back to the previous slide
++ u, <Up arrow key>, ^ :: go to the parent section
++ N, <Down arrow key> :: expand all list in the current slide
 #+end_span6
 #+begin_span6
 + s, or typing "go" :: jump to an arbitrary section (using minibuffer)
