@@ -375,7 +375,12 @@ function printHandler(next){
 
 function dispatchHandler(next){
     return function(e){
-        keystrokeManager.push(e.key);
+        if (e.type == "keydown" && keystrokeManager.stroke == ""){
+            keystrokeManager.push(e.key);
+        }
+        if (e.type == "keypress"){
+            keystrokeManager.push(e.key);
+        }
         var handler = keyManager[keystrokeManager.stroke];
         if (typeof handler == "function"){
             e.preventDefault();
@@ -393,7 +398,15 @@ function dispatchHandler(next){
                 console.error(x);
                 keystrokeManager.init();
             }
-        } else return (next||identity)(e);
+        } else {
+            if (e.type == "keydown"){
+                keystrokeManager.stroke = "";
+            }
+            if (e.type == "keypress"){
+
+            }
+            return (next||identity)(e);
+        }
     };
 }
 
@@ -422,6 +435,7 @@ function rejectHandler(next){
 function keyboardHandler(e){
     console.log("code:"+e.code
                 +" key:"+e.key
+                +" type:"+e.type
                 +" charCode (obsolete):"+e.charCode
                 +" keyCode (obsolete):"+e.keyCode
                 +" which:"+e.which
