@@ -293,6 +293,7 @@ var keystrokeManager = {
         // enteredByDefault : boolean
         var old = this._prompt.text();
         $(window).off("keypress",keyboardHandler);
+        $(window).off("keydown",keyboardHandler);
         this.init(((def && enteredByDefault) ?
                    def : ""),
                   (enteredByDefault ?
@@ -309,6 +310,7 @@ var keystrokeManager = {
                     keystrokeManager.init("",old);
                     $(window).off("keypress",handler);
                     $(window).on("keypress",keyboardHandler);
+                    $(window).on("keydown",keyboardHandler);
                     fn((result=="")?def:result);
                 }
                 else throw x;
