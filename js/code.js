@@ -369,9 +369,7 @@ function cancelHandler(next){
 
 function printHandler(next){
     return function(e){
-        if (available_p(e)){
-            keystrokeManager.push(String.fromCharCode(e.charCode));
-        } else return (next||identity)(e);
+        keystrokeManager.push(e.key);
     };
 }
 
