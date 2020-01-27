@@ -411,6 +411,28 @@ function dispatchHandler(next){
     };
 }
 
+function rejectHandler(next){
+    return function(e){
+        s = keystrokeManager.stroke;
+        candidates = [];
+        for (let key in keyManager) {
+            // console.log(key+" "+s+" "+key.substring(0, s.length));
+            if (key.substring(0, s.length) == s){
+                candidates.push(key);
+            }
+        }
+        console.log("candidates: "+candidates);
+        if (candidates.length > 0){
+            return (next||identity)(e);
+        } else {
+            // no matching command exists
+            console.log("no command starts with prefix "+s);
+            keystrokeManager.backspace();
+        }
+    };
+}
+
+
 function keyboardHandler(e){
     console.log("charCode:"+e.charCode
                 +" keyCode:"+e.keyCode
@@ -422,7 +444,8 @@ function keyboardHandler(e){
                 +(e.altKey?"Alt":""));
     backspaceHandler(
         cancelHandler(
-            dispatchHandler()))(e);
+            dispatchHandler(
+                rejectHandler())))(e);
     console.log(keystrokeManager.stroke);
 }
 
