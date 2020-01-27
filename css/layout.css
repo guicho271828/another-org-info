@@ -371,6 +371,9 @@ pre {
 code {
   padding: 0.12em; }
 
+b {
+  font-weight: 900; }
+
 b i {
   color: red;
   font-style: italic; }

@@ -14,9 +14,11 @@ i {
 
 body {
   color: #1C2024;
-  font-family: Helvetica, Arial,'Lucida Grande', Meiryo, メイリオ, sans-serif;
+  font-family: 'Roboto', Arial,'Lucida Grande', Meiryo, メイリオ, sans-serif;
+  font-style: medium;
   background-color: #fff;
-  text-shadow: 0px 1px 1px lightgray; }
+  text-shadow: 0px 1px 1px lightgray;
+  letter-spacing: 0.03em; }
 
 pre, code {
   font-family: 'Ubuntu Mono',monospace;
