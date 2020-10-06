@@ -14,7 +14,8 @@ all: $(shell find -name "*.svg" -o -name "*.png" -o -name "*.jpg" | sed -e "s/\(
 	ebb -x $<
 
 %.png : %.svg
-	inkscape -f $< -e $*.png -d 150
+# support newer inkscape
+	inkscape -f $< -e $*.png -d 150 || inkscape -o $*.png -d 150 $< 
 #	convert $< $*.png
 #	if you want to use imagemagick, comment out 'inkscape...' and use 'convert...'
 
