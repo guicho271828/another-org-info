@@ -578,18 +578,18 @@ keyManager.p
     }
 };
 
-keyManager.u
-    = keyManager["^"]
-    = keyManager["ArrowUp"]
-    = function(){
-    console.log(slide.level);
-    try{
-        slide = slide.up();
-        slide.show();
-    } catch (x) {
-        console.warn("There is no parent section!");
-    }
-};
+// keyManager.u
+//     = keyManager["^"]
+//     = keyManager["ArrowUp"]
+//     = function(){
+//     console.log(slide.level);
+//     try{
+//         slide = slide.up();
+//         slide.show();
+//     } catch (x) {
+//         console.warn("There is no parent section!");
+//     }
+// };
 
 keyManager.s = keyManager.go = function(){
     return sectionPrompt2("Enter a section number (e.g. 1-2 )");
