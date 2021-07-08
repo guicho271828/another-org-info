@@ -366,7 +366,10 @@ pre, code {
   text-indent: 0em; }
 
 pre {
-  padding: 0.5em !important; }
+  padding: 0.5em !important;
+  border: none;
+  box-shadow: none;
+  margin: 0.2em; }
 
 code {
   padding: 0.12em; }
