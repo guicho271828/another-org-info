@@ -511,14 +511,14 @@ window.onload = function(){
     $('#fullscreen').on("click",toggleFullScreen);
     $(window).on('keydown',keyboardHandler);
     $(window).on('keypress',keyboardHandler);
-    $(window).on('click',keyManager.n);
+    // $(window).on('click',keyManager.n);
     $(window).on('wheel',
                  function (e){
                      // jQuery sucks; e is not equivalent to the original event object
                      if (e.originalEvent.deltaY > 0){
-                         return keyManager.n(e);
+                         return keyManager["-"](e);
                      } else {
-                         return keyManager.p(e);
+                         return keyManager["+"](e);
                      }
                  });
     $(window).on('touchstart', onTouchStart);
