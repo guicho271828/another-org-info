@@ -35,7 +35,7 @@ h2, h3, h4 {
 
 
 @mixin secnum() {
-    display: inline;
+    display: inline-block;
     font-size: 80%;
 }
 

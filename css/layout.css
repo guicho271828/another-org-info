@@ -267,19 +267,19 @@ h2, h3, h4 {
   margin-left: 2em; }
 
 .section-number-2 {
-  display: inline;
+  display: inline-block;
   font-size: 80%; }
   .section-number-2:after {
     content: '.'; }
 
 .section-number-3 {
-  display: inline;
+  display: inline-block;
   font-size: 80%; }
   .section-number-3:after {
     content: '.'; }
 
 .section-number-4 {
-  display: inline;
+  display: inline-block;
   font-size: 80%; }
   .section-number-4:after {
     content: '.'; }
