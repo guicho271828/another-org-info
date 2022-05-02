@@ -19,8 +19,6 @@
 *TAGS
 *.map
 /_deploy/
-/MathJax/
-/org-mode/
 /htmlize/
 /index.html
 *.pdf
@@ -29,3 +27,4 @@
 .sass-cache/
 *.pyg
 *.ptc
+.submodules

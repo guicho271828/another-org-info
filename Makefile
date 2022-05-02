@@ -19,14 +19,14 @@ ncpu       = $(shell grep "processor" /proc/cpuinfo | wc -l)
 		   -bibtex \
 		   $<
 
-%.org.tex: %.org scripts org-mode
+%.org.tex: %.org scripts .submodules
 	scripts/org-latex.sh $< $@
 
-%.org.html: %.org scripts org-mode
+%.org.html: %.org scripts .submodules
 	scripts/org-html.sh $< $@
 
 all: index
-html: img css presen.org.html MathJax
+html: img css presen.org.html .submodules
 pdf:    key.pdf
 nokey:  nokey.pdf
 
@@ -36,14 +36,10 @@ deploy: index
 index: html
 	cp -f presen.org.html index.html
 
-get-archive = wget -O- $(1) | tar xz ; mv $(2) $(3)
-
-MathJax:
-	$(call get-archive, https://github.com/mathjax/MathJax/archive/2.6.1.tar.gz, MathJax-2.6.1, $@)
-
-org-mode:
-	$(call get-archive, http://orgmode.org/org-8.3.6.tar.gz, org-8.3.6, $@)
-	$(MAKE) -C $@ compile
+.submodules:
+	git submodule update --init --recursive
+	$(MAKE) -C org-mode compile
+	touch .submodules
 
 scripts:
 	$(MAKE) -C scripts
