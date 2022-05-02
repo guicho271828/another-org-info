@@ -7,8 +7,8 @@
 #+HTML_HEAD: <script type="text/javascript" src="js/jquery.loupe.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="js/code.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="MathJax/MathJax.js"></script>
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="js/mathjaxconf.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="js/mathjaxconf.js" defer></script>
+#+HTML_HEAD: <script type="text/javascript" src="MathJax/es5/tex-svg.js" defer></script>
 #+HTML_POSTAMBLE: nil
 
 # ## To remove the banner, comment out the next line.
