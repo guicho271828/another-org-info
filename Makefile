@@ -1,13 +1,13 @@
 
 latexmk    = latexmk/latexmk.pl
 
-GH_DOMAIN  = git@github.com
-GH_USER    = asai-research-presentation
-EMACS      = emacs
-EMACSFLAGS =
+export GH_DOMAIN  = git@github.com
+export GH_USER    = asai-research-presentation
+export EMACS      = emacs
+export EMACSFLAGS =
 styles     = sty/anorg.sty sty/user.sty
 
-ncpu       = $(shell grep "processor" /proc/cpuinfo | wc -l)
+export ncpu       = $(shell grep "processor" /proc/cpuinfo | wc -l)
 
 .PHONY: auto all img scripts clean allclean html pdf index css deploy
 .SECONDLY: *.elc *.org.*
