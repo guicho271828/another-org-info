@@ -92,6 +92,12 @@ blockquote {
     line-height:110%;
     margin: auto;
     padding: auto;
+    th,td {
+      padding: {
+         top : 0.05em;
+         bottom : 0.05em;
+      }
+    }
 }
 
 .larger {
@@ -110,4 +116,8 @@ blockquote {
 
 .vertical {
     writing-mode: vertical-rl;
+}
+
+.mjx-chtml {
+    padding-right : 0.2em !important;
 }
