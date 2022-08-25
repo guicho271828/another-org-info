@@ -67,3 +67,5 @@ allclean: clean
 	$(MAKE) -C img clean
 	$(MAKE) -C css clean
 
+archive: index
+	scripts/archive.sh
