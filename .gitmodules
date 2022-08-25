@@ -3,4 +3,4 @@
 	url = https://github.com/mathjax/MathJax/
 [submodule "org-mode"]
 	path = org-mode
-	url = git://git.savannah.gnu.org/emacs/org-mode.git
+	url = https://git.savannah.gnu.org/git/emacs/org-mode.git
