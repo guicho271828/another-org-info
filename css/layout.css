@@ -432,6 +432,9 @@ blockquote {
   line-height: 110%;
   margin: auto;
   padding: auto; }
+  .smaller th, .smaller td {
+    padding-top: 0.05em;
+    padding-bottom: 0.05em; }
 
 .larger {
   font-size: larger;
@@ -447,6 +450,9 @@ blockquote {
 
 .vertical {
   writing-mode: vertical-rl; }
+
+.mjx-chtml {
+  padding-right: 0.2em !important; }
 
 /* ************* Positioning ************ */
 th.right, td.right {
