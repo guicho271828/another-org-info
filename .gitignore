@@ -20,7 +20,7 @@
 *.map
 /_deploy/
 /htmlize/
-/index.html
+*.html
 *.pdf
 *.fdb_latexmk
 *.fls
@@ -28,3 +28,4 @@
 *.pyg
 *.ptc
 .submodules
+*.zip

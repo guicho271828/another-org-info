@@ -68,4 +68,4 @@ allclean: clean
 	$(MAKE) -C css clean
 
 archive: index
-	scripts/archive.sh
+	scripts/inline-html.ros index.html > index-single.html

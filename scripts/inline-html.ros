@@ -1,0 +1,57 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros dynamic-space-size=8000 -L sbcl-bin -m arrival -Q -- $0 "$@"
+|#
+(declaim (sb-ext:muffle-conditions sb-ext:compiler-note style-warning))
+(progn ;;init forms
+  (ros:ensure-asdf)
+  (ql:quickload '(:plump :clss :iterate :alexandria :cl-base64) :silent t))
+
+(defpackage inline
+  (:use :cl :iterate))
+(in-package :inline)
+
+(defun base64-from-binary-file (pathname)
+  (cl-base64:usb8-array-to-base64-string
+   (alexandria:read-file-into-byte-vector pathname)))
+
+;; not used, just for checking
+(defun base64-to-binary-file (string pathname)
+  (alexandria:write-byte-vector-into-file
+   (cl-base64:base64-string-to-usb8-array string)
+   pathname))
+
+(defun main (&optional (html "index.html") &rest argv)
+  (declare (ignorable argv))
+  (let ((root (plump:parse (pathname html))))
+    (iter
+      (for img in-vector (clss:select "img" root))
+      (setf (plump:attribute img "src")
+            (format nil "data:image/png;base64,~a"
+                    (base64-from-binary-file (plump:attribute img "src")))))
+
+    (iter
+      (for link in-vector (clss:select "link" root))
+      (unless (and (equal "text/css" (plump:attribute link "type"))
+                   (plump:attribute link "href"))
+        (next-iteration))
+      (setf (plump:tag-name link) "style")
+      (plump:make-text-node link (alexandria:read-file-into-string (plump:attribute link "href")))
+      (plump:remove-attribute link "href"))
+
+    (iter
+      (for script in-vector (clss:select "script" root))
+      (unless (and (equal "text/javascript" (plump:attribute script "type"))
+                   (plump:attribute script "src"))
+        (next-iteration))
+      (plump:make-text-node script (alexandria:read-file-into-string (plump:attribute script "src")))
+      (plump:remove-attribute script "src"))
+
+    (write-sequence (plump:serialize root) *standard-output*)))
+
+
+
+
+
+;;; vim: set ft=lisp lisp:
