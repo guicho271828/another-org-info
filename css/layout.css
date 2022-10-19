@@ -451,7 +451,7 @@ blockquote {
 .vertical {
   writing-mode: vertical-rl; }
 
-.mjx-chtml {
+mjx-container {
   padding-right: 0.2em !important; }
 
 /* ************* Positioning ************ */
