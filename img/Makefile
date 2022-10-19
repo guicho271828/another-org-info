@@ -20,7 +20,8 @@ all: $(shell find -name "*.pdf" -o -name "*.svg" -o -name "*.png" -o -name "*.jp
 #	if you want to use imagemagick, comment out 'inkscape...' and use 'convert...'
 
 %.png : %.pdf
-	convert $< $@
+	pdftoppm -png -rx 300 -ry 300 $< $*
+	mv $*-1.png $@
 
 clean:
 	-find -name "*.xbb" -delete
