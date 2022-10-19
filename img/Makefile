@@ -5,7 +5,7 @@
 
 .PHONY:	clean all
 
-all: $(shell find -name "*.svg" -o -name "*.png" -o -name "*.jpg" | sed -e "s/\(png\|jpg\|svg\)/xbb/g")
+all: $(shell find -name "*.pdf" -o -name "*.svg" -o -name "*.png" -o -name "*.jpg" | sed -e "s/\(pdf\|png\|jpg\|svg\)/xbb/g")
 
 %.xbb : %.jpg
 	ebb -x $<
@@ -15,9 +15,12 @@ all: $(shell find -name "*.svg" -o -name "*.png" -o -name "*.jpg" | sed -e "s/\(
 
 %.png : %.svg
 # support newer inkscape
-	inkscape -f $< -e $*.png -d 150 || inkscape -o $*.png -d 150 $< 
-#	convert $< $*.png
+	inkscape -f $< -e $@ -d 150 || inkscape -o $@ -d 150 $<
+#	convert $< $@
 #	if you want to use imagemagick, comment out 'inkscape...' and use 'convert...'
+
+%.png : %.pdf
+	convert $< $@
 
 clean:
 	-find -name "*.xbb" -delete
