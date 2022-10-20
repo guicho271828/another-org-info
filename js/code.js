@@ -272,6 +272,7 @@ var keystrokeManager = {
         return this;
     },
     push: function(c){
+        console.log("inserting character '"+c+"'");
         this.stroke=this.stroke.concat(c);
         return this;
     },
@@ -373,6 +374,18 @@ function printHandler(next){
     };
 }
 
+
+function findCandidates(prefix){
+    candidates = [];
+    for (let key in keyManager) {
+        // console.log(key+" "+s+" "+key.substring(0, s.length));
+        if (key.substring(0, prefix.length) == prefix){
+            candidates.push(key);
+        }
+    }
+    return candidates;
+}
+
 function dispatchHandler(next){
     return function(e){
         if (e.type == "keydown" && keystrokeManager.stroke == ""){
@@ -381,11 +394,12 @@ function dispatchHandler(next){
         if (e.type == "keypress"){
             keystrokeManager.push(e.key);
         }
-        var handler = keyManager[keystrokeManager.stroke];
-        if (typeof handler == "function"){
+        var candidates = findCandidates(keystrokeManager.stroke);
+        if (candidates.length == 1){
+            var name = candidates[0];
+            var handler = keyManager[name];
             e.preventDefault();
-            console.log("Handler function "
-                        + keystrokeManager.stroke +" found");
+            console.log("Handler function '" + name +"' found");
             try{
                 if (!handler(e)){
                     console.log(
@@ -398,12 +412,16 @@ function dispatchHandler(next){
                 console.error(x);
                 keystrokeManager.init();
             }
-        } else {
+        } else if (candidates.length > 1) {
+            console.log("multiple handler functions with a prefix string '"+keystrokeManager.stroke+"' found");
+            console.log("candidates: "+candidates);
+            return (next||identity)(e);
+        } else {                // candiadtes.length == 0
+            console.log("handler function with a prefix string '"+keystrokeManager.stroke+"' not found");
             if (e.type == "keydown"){
                 keystrokeManager.stroke = "";
             }
             if (e.type == "keypress"){
-
             }
             return (next||identity)(e);
         }
@@ -412,20 +430,13 @@ function dispatchHandler(next){
 
 function rejectHandler(next){
     return function(e){
-        s = keystrokeManager.stroke;
-        candidates = [];
-        for (let key in keyManager) {
-            // console.log(key+" "+s+" "+key.substring(0, s.length));
-            if (key.substring(0, s.length) == s){
-                candidates.push(key);
-            }
-        }
+        var candidates = findCandidates(keystrokeManager.stroke);
         console.log("candidates: "+candidates);
         if (candidates.length > 0){
             return (next||identity)(e);
         } else {
             // no matching command exists
-            console.log("no command starts with prefix "+s);
+            console.log("no command starts with prefix "+keystrokeManager.stroke);
             keystrokeManager.backspace();
         }
     };
