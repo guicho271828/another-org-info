@@ -514,6 +514,41 @@ function toggleFullScreen() {
   }
 }
 
+
+////////////////////////////////////////////////////////////////
+//// font size  ////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+var fontsizeManager = {
+    init: function(){
+        this.maxwidth = parseFloat($("#content").css("max-width"));
+        this.size = parseFloat($("body").css("font-size"));
+        this.maxwidth_default = this.maxwidth;
+        this.size_default = this.size;
+        return this;
+    },
+    apply: function(){
+        $("#content").css("max-width",this.maxwidth);
+        $("body").css("font-size",this.size);
+    },
+    increase: function(){
+        this.maxwidth = this.maxwidth * 1.1;
+        this.size     = this.size     * 1.1;
+        this.apply();
+    },
+    decrease: function(){
+        this.maxwidth = this.maxwidth * 0.91;
+        this.size     = this.size     * 0.91;
+        this.apply();
+    },
+    reset: function(){
+        this.maxwidth = this.maxwidth_default;
+        this.size     = this.size_default;
+        this.apply();
+    }
+};
+
+
 ////////////////////////////////////////////////////////////////
 //// Initialization
 ////
@@ -549,7 +584,9 @@ window.onload = function(){
     $(window).on('touchstart', onTouchStart);
     $(window).on('touchmove', onTouchMove);
     $(window).on('touchend', onTouchEnd);
-    
+
+    fontsizeManager.init();
+
     if(location.hash!=""){
         goToSection(
             parseSectionHash(location.hash),
@@ -685,18 +722,13 @@ keyManager.unfold = function(){
 };
 
 keyManager["-"] = function(){
-    var maxwidth = parseFloat($("#content").css("max-width"))*0.91;
-    var size = parseFloat($("body").css("font-size"))*0.91;
-    $("#content").css("max-width",maxwidth);
-    $("body").css("font-size",size);
+    fontsizeManager.decrease();
 };
-
-
 keyManager["+"] = function(){
-    var maxwidth = parseFloat($("#content").css("max-width"))*1.1;
-    var size = parseFloat($("body").css("font-size"))*1.1;
-    $("#content").css("max-width",maxwidth);
-    $("body").css("font-size",size);
+    fontsizeManager.increase();
+};
+keyManager["0"] = function(){
+    fontsizeManager.reset();
 };
 
 
