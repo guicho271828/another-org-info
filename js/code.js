@@ -139,7 +139,7 @@ function adjustVerticalCenter(){
     var delay_ratio = 0.4 ;
     if (top > high){
         $(document.body)
-            .finish() 
+            .finish()
             .animate({"margin-top": high},duration);
         slide.headline()
             .finish()
@@ -147,7 +147,7 @@ function adjustVerticalCenter(){
             .animate({"margin-bottom": top - high},duration);
     }else{
         $(document.body)
-            .finish() 
+            .finish()
             .animate({"margin-top": clip(20,top)},duration);
     }
 }
@@ -179,7 +179,7 @@ Slide.prototype = {
     previous : undefined, // Slide object
     level : 1,
     // hide: function(){
-    //   this.current.hide();  
+    //   this.current.hide();
     // },
     headline: function(){
         return $("h1,h2,h3,h4",slide.current).first();
@@ -223,7 +223,7 @@ Slide.prototype = {
     next : function(){
         try{return this.down();} catch (x) {}
         try{return this.right();} catch (x) {}
-        
+
         var slide = this;
         while(true){
             try{
@@ -342,7 +342,7 @@ function enterHandler(next){
             e.stopPropagation();
             e.preventDefault();
             throw "enter";
-        } else return (next||identity)(e);        
+        } else return (next||identity)(e);
     };
 }
 
@@ -352,7 +352,7 @@ function backspaceHandler(next){
             e.stopPropagation();
             e.preventDefault();
             keystrokeManager.backspace();
-        } else return (next||identity)(e); 
+        } else return (next||identity)(e);
     };
 }
 
@@ -363,7 +363,7 @@ function cancelHandler(next){
             e.preventDefault();
             console.log("cancelled");
             keystrokeManager.init();
-        } else return (next||identity)(e); 
+        } else return (next||identity)(e);
     };
 }
 
@@ -766,7 +766,7 @@ Timer.prototype.start = function(seconds,callback){
     var self = this;
     var limit = seconds;
     var update = function(){
-        var displayed_time = limit - seconds; 
+        var displayed_time = limit - seconds;
         // var displayed_time = seconds;
         var rem = (displayed_time%60);
         var quo = (displayed_time-rem)/60;
