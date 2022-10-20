@@ -4,9 +4,8 @@
     display: none;
 }
 
-outline-1, outline-2, outline-3, outline-4 {
+.outline-1, .outline-2, .outline-3, .outline-4 {
     page: mypage;
-    page-break-before: always;
 }
 
 h1, h2, h3, h4 {

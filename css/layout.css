@@ -178,6 +178,9 @@ body {
 /* printing */
 @page mypage {
   size: a4 landscape; }
+@media print {
+  .outline-2, .outline-3, .outline-4 {
+    page-break-before: always; } }
 /* animation */
 .emerging {
   animation-name: emergeX;
@@ -243,9 +246,8 @@ body {
 #text-before-first-headline {
   display: none; }
 
-outline-1, outline-2, outline-3, outline-4 {
-  page: mypage;
-  page-break-before: always; }
+.outline-1, .outline-2, .outline-3, .outline-4 {
+  page: mypage; }
 
 h1, h2, h3, h4 {
   font-size: 130%;

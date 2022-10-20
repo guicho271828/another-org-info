@@ -5,3 +5,9 @@
     size: a4 landscape;
     
 }
+
+@media print {
+    .outline-2, .outline-3, .outline-4 {
+        page-break-before: always;
+    }
+}
