@@ -753,7 +753,7 @@ keyManager.d = function(){
 
 // unfolding the presentation and shows all slides at once
 keyManager.unfold = function(){
-    $("*").visible().show();
+    $("body *").show();
     $(".note").css({position:"static",top:"1em"});
     $("body").css({overflow:"auto"});
 };
