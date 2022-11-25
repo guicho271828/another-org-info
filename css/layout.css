@@ -271,20 +271,14 @@ h2, h3, h4 {
 .section-number-2 {
   display: inline-block;
   font-size: 80%; }
-  .section-number-2:after {
-    content: '.'; }
 
 .section-number-3 {
   display: inline-block;
   font-size: 80%; }
-  .section-number-3:after {
-    content: '.'; }
 
 .section-number-4 {
   display: inline-block;
   font-size: 80%; }
-  .section-number-4:after {
-    content: '.'; }
 
 /* .section-number-4 { */
 /*     display: inline; */

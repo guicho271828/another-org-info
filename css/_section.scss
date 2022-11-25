@@ -41,21 +41,21 @@ h2, h3, h4 {
 .section-number-2, {
     @include secnum();
     &:after{
-        content: '.';
+        // content: '.';
     }
 }
 
 .section-number-3, {
     @include secnum();
     &:after{
-        content: '.';
+        // content: '.';
     }
 }
 
 .section-number-4, {
     @include secnum();
     &:after{
-        content: '.';
+        // content: '.';
     }
 }
 
