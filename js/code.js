@@ -95,32 +95,15 @@ function setExpanders(){
     $("outline-1,outline-2,outline-3,outline-4").click(expand);
 }
 
+
 function outline(n){
     return ".outline-"+n;
 }
+
 function outlineContents(n){
     return ".outline-text-"+n+", h"+n;
 }
 
-function buildSectionHash(secnums){
-    // get an array of numbers and return outline-container-orgheadline-*-*-*
-    return Array.prototype.reduce.call(
-        secnums,
-        function(prev,arg){
-            return prev+arg;
-        },
-        "#outline-container-orgheadline"
-    );
-}
-
-function parseSectionHash(id){
-    var re = /#?(?:outline-container-orgheadline)?(.*)/;
-    return (id.match(re)||[null,"1"])[1].split("-");
-}
-
-function currentHash(){
-    return slide.current.get(0).id;
-}
 
 function clip(low,x,high,when_low,when_high){
     if (x < low){
@@ -589,7 +572,7 @@ window.onload = function(){
 
     if(location.hash!=""){
         goToSection(
-            parseSectionHash(location.hash),
+            hashToSection(location.hash.slice(1)),
             function(){});
     }
 };
@@ -653,40 +636,94 @@ keyManager.p
 //     }
 // };
 
+// saving and jumping to sections
+
 keyManager.s = keyManager.go = function(){
-    return sectionPrompt2("Enter a section number (e.g. 1-2 )");
+    return sectionPrompt("Enter a section number (e.g. 1.2 )");
 };
 
-function sectionPrompt2(message){
+keyManager.f = function(){
+    console.log("fix to section:" + currentHash());
+    location.hash = "#"+ currentHash();
+}
+
+function currentHash(){
+    return slide.current.get(0).id;
+}
+
+function currentSection(){
+    return hashToSection(currentHash());
+}
+
+function hashToSection(hash){
+    // get a hash and return an array of section numbers
+    // hash = "outline-container-org7394a07"
+    var elems = $("#"+hash);
+    console.assert(elems.length==1,"hashToSection: duplicate elements with the same id",elems,elems.length);
+    var elem = elems[0];
+    var outline_class = Array.from(elem.classList).find(cls => cls.slice(0, 7)==="outline"); // "outline-2"
+    console.assert(outline_class,"hashToSection: classList should include outline-*",elem.classList);
+    var split = outline_class.split("-");  // ["outline","2"]
+    console.assert(split.length==2 && split[0]==="outline","hashToSection: class name should be outline-X",split);
+    var level = parseInt(split[1],10); // 2
+    console.assert(level>=1,"hashToSection: level cannot be less than 1 ... what is happening?");
+    var position = $("."+outline_class).index(elem); // 0 == first element
+    console.log(level);
+
+    if (level == 1){
+        return [position+1];
+    }
+    else {
+        console.assert(elems.parent().length==1, "hashToSection: parent should exist", elems.parent());
+        return hashToSection(elems.parent()[0].id).concat([position+1]);
+    }
+}
+
+function sectionToHash(secnums){
+    // get an array of section numbers and return a hash
+    // secnums = [1,2]
+    console.assert(secnums[0]==1, "first secnum should be 1", secnums);
+    function rec(tree,level,secnums){
+        // .outline-1, 2, [2]
+        console.log(tree,level,secnums);
+        var children = tree.children(".outline-"+level);
+        var next = children[secnums[0]-1]
+        if (next == undefined){
+            console.warn(next,"traversal failed! stopping at level "+(level-1));
+            return tree[0].id;
+        }
+        if (secnums.length>1){
+            console.log("continue traversing.");
+            return rec($(next), level+1, secnums.slice(1));
+        }
+        else{
+            console.log("found an element at level "+level);
+            return next.id;
+        }
+    }
+    return rec($(".outline-1"), 2, secnums.slice(1)); // .outline-1,2,[2]
+}
+
+function sectionPrompt(message){
     return keystrokeManager.query(
         message,function(result){
+            // "1.2.3"
             goToSection(
-                parseSectionHash(
-                    buildSectionHash(result.split("-"))),
+                result.split("."),
                 function(){
-                    sectionPrompt2(
-                        buildSectionHash(result.split("-"))
-                            + " does not exists.");})},
-        parseSectionHash(currentHash()).join("-"));
+                    sectionPrompt(
+                        "section " + result + " does not exists.");})},
+        currentSection().join("."));
 }
 
 function goToSection(secnums,onFailure){
     try{
-        console.log("go to section:" + secnums);
-        slide = slide.new($(buildSectionHash(secnums)));
+        console.log("go to section: " + secnums.join("."));
+        slide = slide.new($("#"+sectionToHash(secnums)));
         slide.show();
     } catch (x) {
         onFailure();
     }
-}
-
-function currentHashSimple(){
-    return parseSectionHash(currentHash()).join("-");
-}
-
-keyManager.f = function(){
-    console.log("fix to section:" + currentHashSimple());
-    location.hash = "#"+ currentHashSimple();
 }
 
 // debug
