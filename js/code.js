@@ -672,7 +672,7 @@ function hashToSection(hash){
     console.log(level);
 
     if (level == 1){
-        return [position+1];
+        return [];
     }
     else {
         console.assert(elems.parent().length==1, "hashToSection: parent should exist", elems.parent());
@@ -682,8 +682,7 @@ function hashToSection(hash){
 
 function sectionToHash(secnums){
     // get an array of section numbers and return a hash
-    // secnums = [1,2]
-    console.assert(secnums[0]==1, "first secnum should be 1", secnums);
+    // secnums = [2]
     function rec(tree,level,secnums){
         // .outline-1, 2, [2]
         console.log(tree,level,secnums);
@@ -702,13 +701,13 @@ function sectionToHash(secnums){
             return next.id;
         }
     }
-    return rec($(".outline-1"), 2, secnums.slice(1)); // .outline-1,2,[2]
+    return rec($(".outline-1"), 2, secnums); // .outline-1,2,[2]
 }
 
 function sectionPrompt(message){
     return keystrokeManager.query(
         message,function(result){
-            // "1.2.3"
+            // "2.3"
             goToSection(
                 result.split("."),
                 function(){
