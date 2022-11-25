@@ -572,7 +572,7 @@ window.onload = function(){
 
     if(location.hash!=""){
         goToSection(
-            hashToSection(location.hash.slice(1)),
+            location.hash.slice(1).split("."),
             function(){});
     }
 };
@@ -643,8 +643,9 @@ keyManager.s = keyManager.go = function(){
 };
 
 keyManager.f = function(){
-    console.log("fix to section:" + currentHash());
-    location.hash = "#"+ currentHash();
+    section = currentSection().join(".")
+    console.log("fix to section:" + section);
+    location.hash = "#"+ section;
 }
 
 function currentHash(){
