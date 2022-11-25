@@ -4,3 +4,7 @@
 [submodule "org-mode"]
 	path = org-mode
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git
+[submodule "emacs-htmlize"]
+	path = emacs-htmlize
+	url = https://github.com/hniksic/emacs-htmlize.git
+	branch = release/1.56

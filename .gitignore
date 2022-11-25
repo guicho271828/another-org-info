@@ -19,7 +19,6 @@
 *TAGS
 *.map
 /_deploy/
-/htmlize/
 *.html
 *.pdf
 *.fdb_latexmk

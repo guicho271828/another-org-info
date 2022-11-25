@@ -1,16 +1,15 @@
 
 (add-to-list 'load-path (concat default-directory "../org-mode/lisp/"))
 (add-to-list 'load-path (concat default-directory "../org-mode/contrib/lisp/"))
-(add-to-list 'load-path (concat default-directory "../htmlize"))
+(add-to-list 'load-path (concat default-directory "../emacs-htmlize/"))
 
 (require 'ox-html)
 (require 'org-table)
-;; (require 'htmlize)
 (defun compile-org (in out)
   (require 'ox-html)
   (require 'org-table)
   (org-version nil t t)
-  ;; (require 'htmlize)
+  (require 'htmlize)
   ;; (font-lock-mode)
   (custom-set-faces 
    '(default                      ((t (:foreground "#ffffff" :background "black"))))
