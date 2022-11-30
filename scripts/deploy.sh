@@ -20,6 +20,7 @@ rsync -r --exclude=.git --exclude=org-mode \
 pushd _deploy
 
 git checkout --detach
+touch .nojekyll
 git add -f --all
 git add -f MathJax
 git commit -q -m "Deployed $(date)"
