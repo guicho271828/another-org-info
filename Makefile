@@ -1,6 +1,7 @@
 
 export GH_DOMAIN  = git@github.com
 export GH_USER    = guicho271828
+export LANG       = en_US.utf8
 export EMACS      = emacs
 export EMACSFLAGS =
 
