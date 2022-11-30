@@ -6,11 +6,7 @@ head=$(git rev-parse HEAD)
 make
 git clone . _deploy
 rsync -r --exclude=.git --exclude=org-mode \
-      --exclude=htmlize --exclude=_deploy \
-      --exclude=MathJax/fonts \
-      --exclude=MathJax/unpacked \
-      --exclude=MathJax/jax/output/SVG \
-      --exclude=MathJax/jax/output/HTML-CSS \
+      --exclude=emacs-htmlize --exclude=_deploy \
       . _deploy
 
 # trap "cd $(pwd); rm -r _deploy" EXIT
