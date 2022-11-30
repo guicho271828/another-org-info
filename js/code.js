@@ -576,7 +576,7 @@ window.onload = function(){
 // non-printable keys are queried by the event.key string.
 
 // expand one element in the list in the current slide, or go to the next slide
-keyManager.n
+keyManager.next
     = keyManager[" "]
     = keyManager["ArrowRight"]
     = function(){
@@ -593,7 +593,7 @@ keyManager.n
 };
 
 // expand all elements in the current slide
-keyManager.N
+keyManager.Next
     = keyManager["ArrowDown"]
     = function(){
     $(".title").hide();
@@ -602,7 +602,7 @@ keyManager.N
     while (expand().length>0){}
 };
 
-keyManager.p
+keyManager.previous
     = keyManager["ArrowLeft"]
     = function(){
     console.log(slide.level);
@@ -629,11 +629,11 @@ keyManager.p
 
 // saving and jumping to sections
 
-keyManager.s = keyManager.go = function(){
+keyManager.section = keyManager.go = function(){
     return sectionPrompt("Enter a section number (e.g. 1.2 )");
 };
 
-keyManager.f = function(){
+keyManager.forward = function(){
     section = currentSection().join(".")
     console.log("fix to section:" + section);
     location.hash = "#"+ section;
@@ -735,7 +735,7 @@ function toggleDebug(){
     }
 }
 
-keyManager.d = function(){
+keyManager.debug = function(){
     $(".outline-1,.outline-2,.outline-3,.outline-4"+
       ",li,ul,ol,h1,h2,h3,h4,.outline-text-2, .outline-text-3, .outline-text-4")
         .map(toggleDebug());
@@ -766,7 +766,7 @@ function circularIncrease(){
     ++keynoteState;
     if(keynoteState>=keynoteStates.length){keynoteState = 0;}}
 
-keyManager.k = keyManager.keynotes = function(){
+keyManager.keynotes = function(){
     circularIncrease();
     console.log(keynoteStates[keynoteState]);
     switch (keynoteState) {
@@ -798,7 +798,7 @@ keyManager.banner = function(){
     $("#banner").toggle();
 };
 
-keyManager.help = keyManager.h = keyManager["?"] = function(){
+keyManager.help = keyManager["?"] = function(){
     keystrokeManager.query(
         "Supported commands: \""+
             Object.keys(keyManager).join("\", \"") +
@@ -888,3 +888,4 @@ keyManager.color = function(){
         }, "", false);
     return true;
 }
+
