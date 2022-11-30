@@ -1,1 +1,65 @@
-presen.org
+
+
+* What is it?
+
+=another-org-info= is an html-based presentation system, similar to [[https://revealjs.com/][reveal.js]],
+but based on org-mode and intended for emacs users.
+Example presentation is available [[http://guicho271828.github.io/another-org-info/][here]].
+
+It is probably not an ideal software for a /heavy user/ of org-mode
+who wants to manage /everything/ using org-mode, e.g., the entire schedules.
+=another-org-info= expects only a casual usage of org-mode,
+i.e., almost similar to how you would use markdown.
+
+=another-org-info= is minimalist.
+It doesn't have fancy transitions, vertical slides, or other fluffs available in reveal.js
+which tries to build "Stunning Presentations".
+No, we don't need "Stunning Presentations"
+--- all we need are just "Straightforward Presentations" with minimal distractions.
+
+* Features
+
++ HTML based export and one-line command deployment to gh-pages on github.
++ pdf export through the browser (hit =u= to unfold the presentation and print the page)
++ Style Customization through Scss (Sass variant)
++ Single-file delivery (inline all js/css and embed images in Base64 encoding)
+
+* Usage
+
++ Use this repository as a template
++ Edit =presen.org=
++ =make=
++ =make auto= for automatic rebuild
++ =make deploy= to publish the content to github pages in gh-pages branch
++ =make archive= for a single-file delivery
+
+* Motivation & History & Alternative
+
+I work in academia (computer science) and present ideas & results time to time.
+My work machines are Linux. Openoffice/Libreoffice are not quite good enough,
+and Powerpoint or Keynote are not options to me.
+Working directly in emacs org-mode gives me an obvious comfort
+and compatibility with standard toolsets such as make, git, grep, symlink etc.
+
+Org-mode has its own presentation export, called org-info-js ([[https://orgmode.org/worg/code/org-info-js/][Example here]]).
+However, I was not quite satisfied by its quality,
+especially considering its lack of customization
+and the overall look & feel, compared to Powerpoint and Apple Keynote.
+The font size was also too small.
+This project also initially started out as using the output of org-info-js
+by hacking the CSS.
+
+Reveal.js must be directly written in html.
+Also, while it does a lot of cool stuff, those fancy visuals tend to distract audience from the core presentations
+when explaining complex ideas that need attention and focus.
+An academic presentation does not need fancy background pictures or other eyecatch.
+Its sole purpose is to communicate abstract ideas effectively.
+
+LaTeX Beamer is minimalist, but it must be written in LaTeX.
+Importantly, it does not export to html, thus we cannot publish the presentation easily to the web,
+one of the features I wanted.
+
+Org-mode also has an export plug-in for reveal.js, but I haven't tried that.
+
+
+
