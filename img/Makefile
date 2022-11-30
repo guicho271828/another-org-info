@@ -14,10 +14,9 @@ all: $(shell find -name "*.pdf" -o -name "*.svg" -o -name "*.png" -o -name "*.jp
 	ebb -x $<
 
 %.png : %.svg
-# support newer inkscape
-	inkscape -f $< -e $@ -d 150 || inkscape -o $@ -d 150 $<
-#	convert $< $@
-#	if you want to use imagemagick, comment out 'inkscape...' and use 'convert...'
+	inkscape -f $< -e $@ -d 150      2>/dev/null || \
+		inkscape -o $@ -d 150 $< 2>/dev/null || \
+		convert $< $@            2>/dev/null
 
 %.png : %.pdf
 	pdftoppm -png -rx 300 -ry 300 $< $*
