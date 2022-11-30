@@ -7,7 +7,7 @@ export EMACSFLAGS =
 .PHONY: auto all img scripts clean allclean html index css deploy
 .SECONDLY: *.elc *.org.*
 
-%.org.html: %.org scripts .submodules
+%.org.html: %.org head.org scripts .submodules
 	scripts/org-html.sh $< $@
 
 all: index
@@ -34,9 +34,6 @@ img:
 	$(MAKE) -C img
 css:
 	$(MAKE) -C css
-
-presen.org: head.org
-	touch presen.org
 
 clean:
 	-rm *~ *.html *.elc
