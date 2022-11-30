@@ -536,6 +536,17 @@ window.onload = function(){
         })
     $(".magnifier img").loupe({width:600,height:450,loupe:'loupe'});
     $("#content").addClass("outline-1");
+
+    // add date to the title slide
+    var title_slide_note = $("#"+sectionToHash([])+" .note");
+    if (title_slide_note.length == 0){
+        title_slide_note = $("<div class=\"note\" />");
+        $("#"+sectionToHash([])).append(title_slide_note);
+    }
+    var date = $("#postamble > .date");
+    date.remove();
+    title_slide_note.append(date);
+
     slide = new Slide($("#content"));
     slide.show();
     // setExpanders();

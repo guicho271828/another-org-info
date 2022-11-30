@@ -1,5 +1,5 @@
 #+OPTIONS:   H:4 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   skip:nil d:nil todo:nil pri:nil tags:not-in-toc skip:nil
+#+OPTIONS:   skip:nil d:nil todo:nil pri:nil tags:not-in-toc date:t
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/layout.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/default.css" />
