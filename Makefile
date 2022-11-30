@@ -4,8 +4,6 @@ export GH_USER    = guicho271828
 export EMACS      = emacs
 export EMACSFLAGS =
 
-export ncpu       = $(shell grep "processor" /proc/cpuinfo | wc -l)
-
 .PHONY: auto all img scripts clean allclean html index css deploy
 .SECONDLY: *.elc *.org.*
 
@@ -30,7 +28,7 @@ scripts:
 	$(MAKE) -C scripts
 
 auto:
-	scripts/make-cycle.sh -j $(ncpu) all
+	scripts/make-cycle.sh all
 
 img:
 	$(MAKE) -C img
