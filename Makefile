@@ -2,7 +2,7 @@
 latexmk    = latexmk/latexmk.pl
 
 export GH_DOMAIN  = git@github.com
-export GH_USER    = asai-research-presentation
+export GH_USER    = guicho271828
 export EMACS      = emacs
 export EMACSFLAGS =
 styles     = sty/anorg.sty sty/user.sty
