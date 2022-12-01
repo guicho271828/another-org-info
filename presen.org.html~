@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-30 Wed 23:11 -->
+<!-- 2022-11-30 Wed 23:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yet Another Org-mode Presentation Script</title>
@@ -207,8 +207,8 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">Yet Another Org-mode Presentation Script</h1>
-<div class="outline-text-1" id="orgaeb12ca">
-<div class="xlarge" id="org728f1ed">
+<div class="outline-text-1" id="org4926495">
+<div class="xlarge" id="org5b1a65d">
 <div class="org-center">
 <p>
 To Start Press "n"
@@ -223,8 +223,8 @@ To Start Press "n"
 </p>
 </div>
 
-<div class="note" id="org2651a50">
-<div class="alignright" id="org90eebc9">
+<div class="note" id="org002bca5">
+<div class="alignright" id="orgf3832c8">
 <p>
 Made by guicho2.71828 (Masataro Asai)
 </p>
@@ -235,10 +235,10 @@ Made by guicho2.71828 (Masataro Asai)
 
 </div>
 
-<div id="outline-container-org095a730" class="outline-2">
-<h2 id="org095a730"><span class="section-number-2">1.</span> What Is It?</h2>
+<div id="outline-container-org43b36df" class="outline-2">
+<h2 id="org43b36df"><span class="section-number-2">1.</span> What Is It?</h2>
 <div class="outline-text-2" id="text-1">
-<div class="xlarge" id="org567f2f4">
+<div class="xlarge" id="org627fa4b">
 <p>
 An Alternative to
 </p>
@@ -247,7 +247,7 @@ An Alternative to
 Org-based Presentation
 </p>
 </div>
-<div class="alignright" id="org3c15f31">
+<div class="alignright" id="orgd51f3b6">
 <p>
 Method
 </p>
@@ -264,17 +264,17 @@ Proceed with "n"
 </div>
 </div>
 
-<div id="outline-container-org7baf021" class="outline-2">
-<h2 id="org7baf021"><span class="section-number-2">2.</span> Usage (on browsers)</h2>
+<div id="outline-container-org9e82acb" class="outline-2">
+<h2 id="org9e82acb"><span class="section-number-2">2.</span> Usage (on browsers)</h2>
 <div class="outline-text-2" id="text-2">
-<div class="smaller" id="orgf802baa">
+<div class="smaller" id="org1be3a24">
 <p>
 
 </p>
 
-<div class="container-fluid" id="org692acf5">
-<div class="row-fluid" id="org69cb4f3">
-<div class="span6" id="org7e5d496">
+<div class="container-fluid" id="org94bc349">
+<div class="row-fluid" id="org575790d">
+<div class="span6" id="orgee7d29c">
 <dl class="org-dl">
 <dt>n, &lt;Space&gt;, &lt;Right arrow key&gt;, mouse click, mouse wheel down, touch</dt><dd>go to the next slide/expand a list</dd>
 <dt>p, &lt;Left arrow key&gt;, mouse wheel up</dt><dd>back to the previous slide</dd>
@@ -283,7 +283,7 @@ Proceed with "n"
 </dl>
 
 </div>
-<div class="span6" id="orga2a2221">
+<div class="span6" id="orge4a5516">
 <dl class="org-dl">
 <dt>s, or typing "go"</dt><dd>jump to an arbitrary section (using minibuffer)</dd>
 <dt>d</dt><dd>debugging mode (shows content border)</dd>
@@ -301,8 +301,8 @@ Proceed with "n"
 </div>
 </div>
 
-<div id="outline-container-orgfbd6b4f" class="outline-2">
-<h2 id="orgfbd6b4f"><span class="section-number-2">3.</span> Usage (on emacs)</h2>
+<div id="outline-container-orgd92b61d" class="outline-2">
+<h2 id="orgd92b61d"><span class="section-number-2">3.</span> Usage (on emacs)</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>clone <a href="https://github.com/guicho271828/another-org-info">our repo</a></li>
@@ -314,8 +314,8 @@ Proceed with "n"
 </div>
 </div>
 
-<div id="outline-container-org683dc5e" class="outline-2">
-<h2 id="org683dc5e"><span class="section-number-2">4.</span> Virtue</h2>
+<div id="outline-container-orgee7f8d4" class="outline-2">
+<h2 id="orgee7f8d4"><span class="section-number-2">4.</span> Virtue</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Simplicity
@@ -340,8 +340,8 @@ are added)</li>
 </div>
 </div>
 
-<div id="outline-container-orgde3f8ea" class="outline-2">
-<h2 id="orgde3f8ea"><span class="section-number-2">5.</span> Example: Expanding a List</h2>
+<div id="outline-container-org45159e9" class="outline-2">
+<h2 id="org45159e9"><span class="section-number-2">5.</span> Example: Expanding a List</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><b>the dots</b> tell "<i>this is a content</i>"</li>
@@ -350,11 +350,11 @@ are added)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org188cb2a" class="outline-2">
-<h2 id="org188cb2a"><span class="section-number-2">6.</span> Dependencies</h2>
+<div id="outline-container-org982a444" class="outline-2">
+<h2 id="org982a444"><span class="section-number-2">6.</span> Dependencies</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-<a id="org5394e95"></a>
+<a id="org4ca548d"></a>
 </p>
 
 <ul class="org-ul">
@@ -366,8 +366,8 @@ are added)</li>
 </div>
 </div>
 
-<div id="outline-container-orgfb75943" class="outline-2">
-<h2 id="orgfb75943"><span class="section-number-2">7.</span> LaTeX output</h2>
+<div id="outline-container-orgee04118" class="outline-2">
+<h2 id="orgee04118"><span class="section-number-2">7.</span> LaTeX output</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><a href="presen.pdf">PDF Presentaiton</a> presen.pdf &#x2013; presentation in pdf with similar
@@ -384,12 +384,12 @@ appearance. Useful when browser-based presentation is not allowed</li>
 </div>
 </div>
 
-<div id="outline-container-org0b7aff7" class="outline-2">
-<h2 id="org0b7aff7"><span class="section-number-2">8.</span> Code block / highlightation</h2>
+<div id="outline-container-org64613c9" class="outline-2">
+<h2 id="org64613c9"><span class="section-number-2">8.</span> Code block / highlightation</h2>
 <div class="outline-text-2" id="text-8">
-<div class="container-fluid" id="orgabca93e">
-<div class="row-fluid" id="org2e39879">
-<div class="span6" id="orgb748261">
+<div class="container-fluid" id="orgd6c0319">
+<div class="row-fluid" id="orgb80f187">
+<div class="span6" id="orgecc44ff">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">factorial</span> (n)
   (<span style="color: #a020f0;">if</span> (zerop n)
@@ -399,7 +399,7 @@ appearance. Useful when browser-based presentation is not allowed</li>
 </div>
 
 </div>
-<div class="span6" id="org538c939">
+<div class="span6" id="orge668b96">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">import</span> numpy <span style="color: #a020f0;">as</span> np
 <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">unit</span>(i):
@@ -419,8 +419,8 @@ appearance. Useful when browser-based presentation is not allowed</li>
 </div>
 
 
-<div id="outline-container-orgc244c47" class="outline-2">
-<h2 id="orgc244c47"><span class="section-number-2">9.</span> Images</h2>
+<div id="outline-container-orgcf64622" class="outline-2">
+<h2 id="orgcf64622"><span class="section-number-2">9.</span> Images</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>Put images into <code>img/</code> directory.</li>
@@ -443,8 +443,8 @@ bit buggy and I personally failed make it work.</li>
 </div>
 </div>
 
-<div id="outline-container-org5396920" class="outline-2">
-<h2 id="org5396920"><span class="section-number-2">10.</span> Org-block templates</h2>
+<div id="outline-container-org52c8e1c" class="outline-2">
+<h2 id="org52c8e1c"><span class="section-number-2">10.</span> Org-block templates</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 We mark the html tag with org-mode blocks such as <code>#+BEGIN_EXAMPLE</code>.
@@ -452,7 +452,7 @@ Using <a href="http://orgmode.org/manual/Easy-Templates.html">block template</a>
 you can quickly write such blocks i.e.:
 </p>
 
-<pre class="example" id="org592368c">
+<pre class="example" id="org3cda2b1">
 at the beginning of line, hit
 
 &lt;s&lt;tab&gt;
@@ -466,8 +466,8 @@ it would expand into:
 </pre>
 </div>
 
-<div id="outline-container-org832e414" class="outline-3">
-<h3 id="org832e414"><span class="section-number-3">10.1.</span> customizing templates</h3>
+<div id="outline-container-org5cb91aa" class="outline-3">
+<h3 id="org5cb91aa"><span class="section-number-3">10.1.</span> customizing templates</h3>
 <div class="outline-text-3" id="text-10-1">
 <p>
 We provide custom <code>org-structure-template-alist</code>.
@@ -475,9 +475,9 @@ These blocks are recognized by the stylesheet we provide,
 so they are highlighted correctly.
 </p>
 
-<div class="container-fluid" id="org4552f2f">
-<div class="row-fluid" id="orge66ac90">
-<div class="span6" id="org00de206">
+<div class="container-fluid" id="orgeb15196">
+<div class="row-fluid" id="org45c459a">
+<div class="span6" id="orgf45f253">
 <ul class="org-ul">
 <li>&lt;S &#x2013; smaller</li>
 <li>&lt;lar &#x2013; larger</li>
@@ -491,7 +491,7 @@ so they are highlighted correctly.
 </ul>
 
 </div>
-<div class="span6" id="org0424487">
+<div class="span6" id="orgaf3d2b0">
 <p>
 copy-paste it
 to your <code>.emacs</code>
@@ -512,8 +512,8 @@ to your <code>.emacs</code>
 </div>
 </div>
 
-<div id="outline-container-orgc708d33" class="outline-2">
-<h2 id="orgc708d33"><span class="section-number-2">11.</span> Utility</h2>
+<div id="outline-container-orgfe842d3" class="outline-2">
+<h2 id="orgfe842d3"><span class="section-number-2">11.</span> Utility</h2>
 <div class="outline-text-2" id="text-11">
 <ul class="org-ul">
 <li>./make-periotically.sh [args]
@@ -527,8 +527,8 @@ to your <code>.emacs</code>
 </div>
 </div>
 
-<div id="outline-container-org6da4b02" class="outline-2">
-<h2 id="org6da4b02"><span class="section-number-2">12.</span> Makefile Targets</h2>
+<div id="outline-container-orgc6ffe88" class="outline-2">
+<h2 id="orgc6ffe88"><span class="section-number-2">12.</span> Makefile Targets</h2>
 <div class="outline-text-2" id="text-12">
 <ul class="org-ul">
 <li><code>make html</code> &#x2013; builds the html version</li>
@@ -539,8 +539,8 @@ to your <code>.emacs</code>
 </div>
 </div>
 
-<div id="outline-container-org4e1669d" class="outline-2">
-<h2 id="org4e1669d"><span class="section-number-2">13.</span> Test</h2>
+<div id="outline-container-org4417993" class="outline-2">
+<h2 id="org4417993"><span class="section-number-2">13.</span> Test</h2>
 <div class="outline-text-2" id="text-13">
 <ul class="org-ul">
 <li><a href="http://www.google.com">Link</a></li>
@@ -564,12 +564,12 @@ Mathjax formula:
 \end{equation}
 </div>
 
-<div id="outline-container-orgf3dbf81" class="outline-3">
-<h3 id="orgf3dbf81"><span class="section-number-3">13.1.</span> Twocolumn Test</h3>
+<div id="outline-container-org677375d" class="outline-3">
+<h3 id="org677375d"><span class="section-number-3">13.1.</span> Twocolumn Test</h3>
 <div class="outline-text-3" id="text-13-1">
-<div class="container-fluid" id="orgfc63030">
-<div class="row-fluid" id="orge2233d4">
-<div class="span6" id="org2c3725e">
+<div class="container-fluid" id="orgc559265">
+<div class="row-fluid" id="org5c5817d">
+<div class="span6" id="org1b7fb45">
 <ul class="org-ul">
 <li>HOOA!</li>
 <li><b>HOOA!</b></li>
@@ -577,13 +577,13 @@ Mathjax formula:
 </ul>
 
 </div>
-<div class="span6" id="org8fb96de">
+<div class="span6" id="orgca2cae8">
 <p>
 This is a LISP ALIEN IN A CAGE!
 </p>
 
 
-<div id="org18308ff" class="figure">
+<div id="org6921b4e" class="figure">
 <p><img src="img/alien.png" alt="alien.png" />
 </p>
 </div>
@@ -597,30 +597,30 @@ This is a LISP ALIEN IN A CAGE!
 </div>
 
 
-<div id="outline-container-orgb497377" class="outline-3">
-<h3 id="orgb497377"><span class="section-number-3">13.2.</span> many columns test</h3>
+<div id="outline-container-orgc858a2e" class="outline-3">
+<h3 id="orgc858a2e"><span class="section-number-3">13.2.</span> many columns test</h3>
 <div class="outline-text-3" id="text-13-2">
-<div class="container-fluid" id="orgdd23c00">
-<div class="row-fluid" id="orgb13f4b2">
-<div class="span3" id="org66eb657">
+<div class="container-fluid" id="org5602ba0">
+<div class="row-fluid" id="org401c1bf">
+<div class="span3" id="org6587f8b">
 <p>
 a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 </p>
 
 </div>
-<div class="span3" id="orgc120f81">
+<div class="span3" id="org164c114">
 <p>
 b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
 </p>
 
 </div>
-<div class="span3" id="org492b621">
+<div class="span3" id="org72930ed">
 <p>
 c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c
 </p>
 
 </div>
-<div class="span3" id="orgd540cd1">
+<div class="span3" id="orgfe7bc74">
 <p>
 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
 </p>
@@ -634,11 +634,11 @@ d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
 </div>
 </div>
 
-<div id="outline-container-org91d5feb" class="outline-2">
-<h2 id="org91d5feb"><span class="section-number-2">14.</span> A Slide with Too Little Contents</h2>
+<div id="outline-container-org6552b6d" class="outline-2">
+<h2 id="org6552b6d"><span class="section-number-2">14.</span> A Slide with Too Little Contents</h2>
 <div class="outline-text-2" id="text-14">
 <div class="org-center">
-<div class="smaller" id="org3bb8395">
+<div class="smaller" id="org3999853">
 <p>
 Hi, I'm small!
 </p>
@@ -646,7 +646,7 @@ Hi, I'm small!
 </div>
 </div>
 
-<div class="note" id="orge8d1c08">
+<div class="note" id="orgfae0a03">
 <p>
 See the headline is correctly adjusted
 </p>
@@ -655,10 +655,10 @@ See the headline is correctly adjusted
 </div>
 </div>
 
-<div id="outline-container-orgeacd9ed" class="outline-2">
-<h2 id="orgeacd9ed"><span class="section-number-2">15.</span> Left-Center-Right template</h2>
+<div id="outline-container-orgccdb663" class="outline-2">
+<h2 id="orgccdb663"><span class="section-number-2">15.</span> Left-Center-Right template</h2>
 <div class="outline-text-2" id="text-15">
-<div class="xlarge" id="org56f6db2">
+<div class="xlarge" id="orge02442e">
 <p>
 x-large left
 </p>
@@ -667,7 +667,7 @@ x-large left
 centered
 </p>
 </div>
-<div class="alignright" id="orgb041e46">
+<div class="alignright" id="orge949855">
 <p>
 right
 </p>
@@ -676,7 +676,7 @@ right
 
 </div>
 
-<div class="note" id="org71dd2ef">
+<div class="note" id="org67fe93c">
 <p>
 This is a footnote
 </p>
@@ -685,13 +685,13 @@ This is a footnote
 </div>
 </div>
 
-<div id="outline-container-org8468803" class="outline-2">
-<h2 id="org8468803"><span class="section-number-2">16.</span> TODOs</h2>
+<div id="outline-container-org3a02e12" class="outline-2">
+<h2 id="org3a02e12"><span class="section-number-2">16.</span> TODOs</h2>
 <div class="outline-text-2" id="text-16">
-<div class="container-fluid" id="org5997a34">
-<div class="row-fluid" id="org51483de">
-<div class="span6" id="org9f49d24">
-<div class="smaller" id="org5b97296">
+<div class="container-fluid" id="orgc43ff0d">
+<div class="row-fluid" id="org11b4e46">
+<div class="span6" id="org71fa73f">
+<div class="smaller" id="org25166c7">
 <ul class="org-ul">
 <li>Features
 <ul class="org-ul">
@@ -714,8 +714,8 @@ This is a footnote
 </div>
 
 </div>
-<div class="span6" id="orged38572">
-<div class="smaller" id="orgae264ac">
+<div class="span6" id="org3a73638">
+<div class="smaller" id="orgd38d1cc">
 <ul class="org-ul">
 <li>Features inspired by other tools
 <ul class="org-ul">
@@ -745,7 +745,7 @@ This is a footnote
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Masataro Asai</p>
-<p class="date">Created: 2022-11-30 Wed 23:11</p>
+<p class="date">Created: 2022-11-30 Wed 23:14</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
