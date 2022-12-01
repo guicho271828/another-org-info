@@ -5,8 +5,11 @@ head=$(git rev-parse HEAD)
 
 make
 git clone . _deploy
-rsync -r --exclude=.git --exclude=org-mode \
-      --exclude=emacs-htmlize --exclude=_deploy \
+rsync -r \
+      --exclude=.git \
+      --exclude=org-mode \
+      --exclude=emacs-htmlize \
+      --exclude=_deploy \
       . _deploy
 
 # trap "cd $(pwd); rm -r _deploy" EXIT
@@ -14,6 +17,8 @@ rsync -r --exclude=.git --exclude=org-mode \
 # trap "popd; rm -r _deploy" INT
 
 pushd _deploy
+
+rm -r org-mode emacs-htmlize
 
 git checkout --detach
 touch .nojekyll
