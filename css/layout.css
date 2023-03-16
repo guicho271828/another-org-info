@@ -444,6 +444,10 @@ blockquote {
   line-height: 110%;
   text-shadow: 1px 1px 1px lightgray; }
 
+.xsmall {
+  font-size: 50%;
+  line-height: 100%; }
+
 .vertical {
   writing-mode: vertical-rl; }
 
