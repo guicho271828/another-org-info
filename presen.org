@@ -1,11 +1,6 @@
 #+title: Yet Another Org-mode Presentation Script
 #+author: Masataro Asai
 #+include: "head.org"
-#+LINK: img file:img/%s
-#+LINK: png file:img/%s.png
-#+LINK: jpg file:img/%s.jpg
-#+LINK: spng file:img/static/%s.png
-#+LINK: sjpg file:img/static/%s.jpg
 
 #+html_head: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,900">
 #+html_head_extra:

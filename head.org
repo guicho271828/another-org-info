@@ -11,6 +11,16 @@
 #+HTML_HEAD: <script type="text/javascript" src="MathJax/es5/tex-chtml.js" defer></script>
 #+HTML_POSTAMBLE: nil
 
+#+LINK: img file:img/%s
+#+LINK: png file:img/%s.png
+#+LINK: jpg file:img/%s.jpg
+#+LINK: gif file:img/%s.gif
+#+LINK: svg file:img/%s.svg
+#+LINK: spng file:img/static/%s.png
+#+LINK: sjpg file:img/static/%s.jpg
+#+LINK: sgif file:img/static/%s.gif
+#+LINK: ssvg file:img/static/%s.svg
+
 # ## To remove the banner, comment out the next line.
 # #+HTML_HEAD: <a id="banner" href="https://github.com/guicho271828/another-org-info"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/static/forkme.png" alt="Fork me on GitHub"></a>
 
