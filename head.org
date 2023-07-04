@@ -21,6 +21,9 @@
 #+LINK: sgif file:img/static/%s.gif
 #+LINK: ssvg file:img/static/%s.svg
 
+#+html_head: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,900">
+#+html_head_extra:
+
 # ## To remove the banner, comment out the next line.
 # #+HTML_HEAD: <a id="banner" href="https://github.com/guicho271828/another-org-info"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/static/forkme.png" alt="Fork me on GitHub"></a>
 

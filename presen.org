@@ -2,9 +2,6 @@
 #+author: Masataro Asai
 #+include: "head.org"
 
-#+html_head: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,900">
-#+html_head_extra:
-
 #+begin_outline-text-1
 #+begin_xlarge
 #+begin_center
