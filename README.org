@@ -31,8 +31,9 @@ No, we don't need "Stunning Presentations"
 + =make=
 + =make auto= for automatic rebuild
 + =make deploy= to publish the content to github pages in gh-pages branch
-  + Edit =Makefile= for deployment customization
+  + Edit =Makefile= for deployment customization, e.g., target repository
 + =make archive= for a single-file delivery
++ To export to a pdf, use the browser (hit =u= to unfold the presentation and print the page)
 
 * Motivation & History & Alternative
 
