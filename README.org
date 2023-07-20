@@ -37,28 +37,26 @@ No, we don't need "Stunning Presentations"
 
 * Motivation & History & Alternative
 
-I work in academia (computer science) and present ideas & results time to time.
-My work machines are Linux. Openoffice/Libreoffice are not quite good enough,
-and Powerpoint or Keynote are not options to me.
-Working directly in emacs org-mode gives me an obvious comfort
-and compatibility with standard toolsets such as make, git, grep, symlink etc.
+I work in academia (computer science) and present ideas & results from time to time.
+My work machines are Linux. Openoffice/Libreoffice are not good enough,
+and Powerpoint or Keynote are not options for me.
+Working directly in emacs org-mode gives me comfort,
+and its text-based representation provides easy compatibility with standard dev toolsets such as make, git, grep, symlink, etc.
 
 Org-mode has its own presentation export, called org-info-js ([[https://orgmode.org/worg/code/org-info-js/][Example here]]).
-However, I was not quite satisfied by its quality,
+However, I was not satisfied by its quality either,
 especially considering its lack of customization
-and the overall look & feel, compared to Powerpoint and Apple Keynote.
-The font size was also too small.
-This project also initially started out as using the output of org-info-js
-by hacking the CSS.
+and the overall look & feel (the font size is too small!), compared to Powerpoint and Apple Keynote.
+As a side note: This project also initially started out as using the output of org-info-js by hacking the CSS.
 
 Reveal.js must be directly written in html.
-Also, while it does a lot of cool stuff, those fancy visuals tend to distract audience from the core presentations
+Also, while it does a lot of cool stuff, those fancy visuals tend to distract the audience from the core presentations
 when explaining complex ideas that need attention and focus.
-An academic presentation does not need fancy background pictures or other eyecatch.
+An academic presentation does not need fancy background pictures or other eyecatchers.
 Its sole purpose is to communicate abstract ideas effectively.
 
 LaTeX Beamer is minimalist, but it must be written in LaTeX.
-Importantly, it does not export to html, thus we cannot publish the presentation easily to the web,
+Importantly, it does not export to html, thus we cannot publish the presentation easily on the web,
 one of the features I wanted.
 
 Org-mode also has an export plug-in for reveal.js, but I haven't tried that.
