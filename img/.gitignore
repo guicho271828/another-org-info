@@ -1,3 +1,4 @@
 *.png
-!static/*.png
+!static/**/*.png
 !**/*.pdf
+
