@@ -175,6 +175,9 @@ body {
 .mjx-chtml {
   margin-right: 0.3em !important; }
 
+.date {
+  display: none; }
+
 /* printing */
 @page mypage {
   size: a4 landscape; }
@@ -822,12 +825,12 @@ table {
   margin-left: 8.51063829787234%;
   *margin-left: 8.404255319148938%; }
 
-.hide[class*="span"],
-.row-fluid .hide[class*="span"] {
+[class*="span"].hide,
+.row-fluid [class*="span"].hide {
   display: none; }
 
-.pull-right[class*="span"],
-.row-fluid .pull-right[class*="span"] {
+[class*="span"].pull-right,
+.row-fluid [class*="span"].pull-right {
   float: right; }
 
 .container {

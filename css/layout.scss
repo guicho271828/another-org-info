@@ -73,6 +73,10 @@ body {
     margin-right: 0.3em !important ;
 }
 
+.date {
+    display:none;
+}
+
 @import "_printing";
 @import "_animation";
 @import "_section";
