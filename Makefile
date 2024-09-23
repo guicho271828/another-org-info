@@ -21,7 +21,7 @@ index: html
 	cp -f presen.org.html index.html
 
 .submodules:
-	git submodule update --init --recursive --depth 1
+	git submodule update --init --recursive
 	$(MAKE) -C org-mode compile
 	touch .submodules
 
