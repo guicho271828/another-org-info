@@ -462,9 +462,9 @@ function onTouchMove(event) {
 
 function onTouchEnd(event) {
     if (direction == 'right'){
-        keyManager.n();
+        keyManager.next();
     } else if (direction == 'left'){
-        keyManager.p();
+        keyManager.previous();
     }
 }
 
